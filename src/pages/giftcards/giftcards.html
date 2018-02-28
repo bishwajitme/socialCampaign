@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-navbar>
+  <button ion-button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+    <ion-title>Gigtcards</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="bg">
+  <ion-list>
+    <ion-card *ngFor="let place of places; let i = index">
+      <img [src]="place.imageUrl">
+      <ion-card-content text-center>
+        <ion-card-title class="title">
+          <h1>{{ place.title }}</h1>
+        </ion-card-title>
+        <p>{{ place.description }}</p>
+
+      </ion-card-content>
+      <ion-row>
+        <ion-col>
+          <button
+                  class="button"
+                  ion-button
+                  icon-right
+                  block
+                  padding-vertical
+                  color="primary"
+                  (click)="sharetweets(place.title, place.imageUrl)">
+            Share this
+            <ion-icon ios="ios-share" md="md-share"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+
+
+      <ion-row>
+        <ion-col>
+
+      <button ion-button
+              block
+              (click)="presentConfirm()">
+        <ion-icon>Delete</ion-icon>
+      </button>
+
+        </ion-col>
+      </ion-row>
+    </ion-card>
+
+  </ion-list>
+
+</ion-content>
+

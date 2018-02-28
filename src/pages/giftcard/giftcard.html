@@ -1,0 +1,46 @@
+<ion-header *ngIf="stShow">
+  <ion-navbar >
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Gift Card Generator</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="gift_card">
+  <ion-item *ngIf="stShow">
+    <ion-input type="number" min="7" required placeholder="Enter your Phone Number" [(ngModel)]="qrData">
+    </ion-input>
+  </ion-item>
+  <button ion-button full icon-left (click)="createCode()" *ngIf="stShow"><ion-icon name="barcode"></ion-icon>Generate Gift Card</button>
+
+  <ion-item *ngIf="createdCode" style="background: transparent;">
+   <h2 padding text-center>Enjoy Discount at ABC</h2>
+  </ion-item>
+
+  <ion-card *ngIf="createdCode">
+    <ngx-qrcode [qrc-value]="createdCode"></ngx-qrcode>
+    <ion-card-content>
+     <!-- <img src="{{ screen }}" *ngIf="state">-->
+    </ion-card-content>
+  </ion-card>
+  <ion-item *ngIf="createdCode" style="background: transparent;">
+    <p padding text-center>AbC Coffee Shop</p>
+  </ion-item>
+
+  <ion-row *ngIf="state">
+    <ion-col>
+      <button
+              class="button"
+              ion-button
+              icon-right
+              block
+              padding-vertical
+              color="primary"
+              (click)="goToOtherPage()">
+        Go to GiftCard Page
+
+      </button>
+    </ion-col>
+  </ion-row>
+</ion-content>

@@ -1,0 +1,12 @@
+{
+    "libiconv.dylib": 1,
+    "AVFoundation.framework": 1,
+    "CoreVideo.framework": 1,
+    "QuartzCore.framework": 1,
+    "CoreImage.framework": 1,
+    "AudioToolbox.framework": 1,
+    "libz.tbd": 2,
+    "WebKit.framework": 1,
+    "Social.framework": 1,
+    "MessageUI.framework": 1
+}
